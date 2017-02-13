@@ -18,7 +18,7 @@
 package org.bubenheimer.util;
 
 public abstract class Uninstantiable {
-    public Uninstantiable() {
+    protected Uninstantiable() {
         throw new UnsupportedOperationException();
     }
 }
