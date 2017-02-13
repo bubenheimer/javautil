@@ -26,7 +26,7 @@ version=VERSION_NAME
 
 jar {
     manifest {
-        attributes 'Implementation-Title': 'JavaRulez',
+        attributes 'Implementation-Title': 'JavaUtil',
                 'Implementation-Version': version
     }
 }

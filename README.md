@@ -1,4 +1,4 @@
-# JavaUtils
+# JavaUtil
 #### Miscellaneous Java functionality
 
 
