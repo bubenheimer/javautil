@@ -17,10 +17,8 @@
 
 apply plugin: 'java'
 
-//noinspection GroovyUnusedAssignment
-sourceCompatibility = JavaVersion.VERSION_1_8
-//noinspection GroovyUnusedAssignment
-targetCompatibility = JavaVersion.VERSION_1_8
+rootProject.sourceCompatibility = JavaVersion.VERSION_1_8
+rootProject.targetCompatibility = JavaVersion.VERSION_1_8
 
 version=VERSION_NAME
 
@@ -34,10 +32,5 @@ jar {
 repositories {
     maven { url MAVEN_REPOSITORY_URL}
 }
-
-//compileJava {
-//    //Disable warning about -source=1.7 and setting bootclasspath to 1.7 libraries
-//    options.compilerArgs << "-Xlint:-options"
-//}
 
 apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
