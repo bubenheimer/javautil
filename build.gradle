@@ -15,8 +15,24 @@
  *
  */
 
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/' }
+    }
+
+    dependencies {
+        classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.0.13'
+    }
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
 apply plugin: 'java-library'
 apply plugin: 'maven-publish'
+apply plugin: 'net.ltgt.errorprone'
 
 //noinspection GroovyUnusedAssignment
 group = 'org.bubenheimer'
@@ -34,4 +50,8 @@ publishing {
             from components.java
         }
     }
+}
+
+dependencies {
+    errorprone 'com.google.errorprone:error_prone_core:2.3.2'
 }
