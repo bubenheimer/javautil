@@ -21,7 +21,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.0.13'
+        classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.6.1'
     }
 }
 
@@ -54,4 +54,6 @@ publishing {
 
 dependencies {
     errorprone 'com.google.errorprone:error_prone_core:2.3.2'
+    //noinspection GradleDynamicVersion
+    errorproneJavac 'com.google.errorprone:javac:9+181-r4173-1'
 }
