@@ -21,13 +21,19 @@ buildscript {
     }
 
     dependencies {
-        classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.6.1'
+        classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.7.1'
     }
 }
 
 repositories {
     mavenLocal()
     jcenter()
+}
+
+tasks.withType(JavaCompile) {
+    afterEvaluate {
+        options.errorprone.check('OperatorPrecedence', net.ltgt.gradle.errorprone.CheckSeverity.OFF)
+    }
 }
 
 apply plugin: 'java-library'
@@ -53,7 +59,7 @@ publishing {
 }
 
 dependencies {
-    errorprone 'com.google.errorprone:error_prone_core:2.3.2'
+    errorprone 'com.google.errorprone:error_prone_core:2.3.3'
     //noinspection GradleDynamicVersion
     errorproneJavac 'com.google.errorprone:javac:9+181-r4173-1'
 }
