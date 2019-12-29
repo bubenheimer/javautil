@@ -30,12 +30,6 @@ repositories {
     jcenter()
 }
 
-tasks.withType(JavaCompile) {
-    afterEvaluate {
-        options.errorprone.check('OperatorPrecedence', net.ltgt.gradle.errorprone.CheckSeverity.OFF)
-    }
-}
-
 apply plugin: 'java-library'
 apply plugin: 'maven-publish'
 apply plugin: 'net.ltgt.errorprone'
@@ -55,6 +49,12 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
         }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    afterEvaluate {
+        options.errorprone.check('OperatorPrecedence', net.ltgt.gradle.errorprone.CheckSeverity.OFF)
     }
 }
 
